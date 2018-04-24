@@ -6,7 +6,8 @@ import (
 	"github.com/cloudfoundry-incubator/cf-test-helpers/helpers/internal"
 )
 
-const CURL_TIMEOUT = 30 * time.Second
+// Increased to 60 to workaround Nora app taking >30 seconds to respond for WRT-2016
+const CURL_TIMEOUT = 60 * time.Second
 
 // Gets an app's endpoint with the specified path
 func AppUri(appName, path string, config helpersinternal.CurlConfig) string {
